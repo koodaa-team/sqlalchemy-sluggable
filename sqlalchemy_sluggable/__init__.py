@@ -105,7 +105,7 @@ class Sluggable(object):
             }
 
     def slugify(self, value):
-        return unicode(parameterize(value, self._get_slug_option('separator')))
+        return str(parameterize(value, self._get_slug_option('separator')))
 
 
 @event.listens_for(Session, 'before_flush')
